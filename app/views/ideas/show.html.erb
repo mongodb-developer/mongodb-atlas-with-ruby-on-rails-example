@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-9">
+    <%= image_tag(@idea.picture, width: '100%') if @idea.picture.present? %>
+  </div>
+
+  <div class="col-md-3">
+    <p><b>Name: </b><%= @idea.name %></p>
+    <p><b>Description: </b><%= @idea.description %></p>
+    <p>
+      <%= link_to 'Edit', edit_idea_path(@idea) %> |
+      <%= link_to 'Destroy', @idea, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', ideas_path %>
+    </p>
+  </div>
+</div>
