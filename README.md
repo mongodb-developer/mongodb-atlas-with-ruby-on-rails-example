@@ -1,24 +1,21 @@
-# README
+# Getting Started with MongoDB Atlas and Ruby on Rails Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains the sample application for showing how to get started using MongoDB Atlas and Ruby on Rails.
 
-Things you may want to cover:
+## How To Run
 
-* Ruby version
+1. You can follow the [Getting Started with Atlas](https://docs.atlas.mongodb.com/getting-started/) guide, to learn how to create a free Atlas account, create your first cluster and get your Connection String to the database.
+Then, set the URI value in `config/mongoid.yml` to your Connection String:
+```
+ATLAS_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+```
 
-* System dependencies
+2. Start the Application
+ From your command-line of choice, run:
+```
+rails server
+```
 
-* Configuration
+## Disclaimer
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use at your own risk; not a supported MongoDB product

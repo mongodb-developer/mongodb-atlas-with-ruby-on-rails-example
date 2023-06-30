@@ -34,3 +34,7 @@ body { margin: 0; }
    background-color: transparent;
    text-decoration: none;
   }
+
+  .container {
+      margin: auto  ;
+  }
