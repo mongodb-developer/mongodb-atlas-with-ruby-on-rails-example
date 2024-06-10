@@ -2,6 +2,10 @@
 
 This repository contains the sample application for showing how to get started using MongoDB Atlas and Ruby on Rails.
 
+### Branches
+- Main: This contains the base working application for CRUD operations against your MongoDB data.
+- Atlas-Search: This branch contains an implementation of Atlas Search on the application.
+
 ## How To Run
 
 1. You can follow the [Getting Started with Atlas](https://docs.atlas.mongodb.com/getting-started/) guide, to learn how to create a free Atlas account, create your first cluster and get your Connection String to the database.
