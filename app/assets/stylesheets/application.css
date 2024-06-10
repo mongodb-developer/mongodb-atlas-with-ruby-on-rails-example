@@ -13,14 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
  footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 body { margin: 0; }
+
 .navbar {
     min-height: 38px;
     background-color: #ECA72C;
   }
+
+
   .navbar-brand { 
     font-size: 24px;
     color: #080357;
@@ -30,90 +34,7 @@ body { margin: 0; }
    background-color: transparent;
    text-decoration: none;
   }
+
   .container {
       margin: auto  ;
   }
-
-  #pic {
-    width: 20vw;
-  }
-
-  
-
-  .search-results {
-    
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .idea-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .idea {
-    padding: 20px;
-    border-bottom: 2px solid #ccc;
-    border-radius: 10px 10px 0 0;
-    margin-bottom: 10px;
-  }
-  
-  .idea h2 {
-    margin: 0;
-  }
-  
-  .idea p {
-    margin: 0;
-  }
-  
-  .idea img {
-    width: 100px; 
-    height: auto; 
-    display: block; 
-  }
-  
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-
-  
-  .ideas-index {
-    font-weight: bold;
-
-  }
-  
-  .ideas-list {
-    margin: 20px 0; 
-    flex-direction: column;
-  }
-  
-  .ideas-list img {
-    width: 200px; 
-    height: auto; 
-    display: block; 
-  }
-
-
-  
-  .ideas-list-name {
-    font-size: 40px; 
-  }
-  
-  
-.input-group {
-  width: 100%;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004085;
-}
