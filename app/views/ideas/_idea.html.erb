@@ -11,7 +11,7 @@
 
   <p>
     <strong>Picture:</strong>
-   <%= image_tag idea.picture, width: '50%' if idea.picture.present? %>
+      <img id="pic" src="<%= idea.picture %>" alt="<%= idea.name %>" />
   </p>
 
 </div>
