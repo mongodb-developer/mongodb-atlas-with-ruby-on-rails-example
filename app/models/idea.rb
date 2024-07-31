@@ -1,16 +1,40 @@
 class Idea
-  include Mongoid::Document
-  include Mongoid::Timestamps
+ include Mongoid::Document
+ include Mongoid::Timestamps
+ field :name, type: String
+ field :description, type: String
+ field :picture, type: String
+ 
+def self.search(query)
+   aggregation_pipeline = [
+     {
+       "$search": {
+         "index": "inspiration",
+         "text": {
+           "query": query,
+           "path": [“name”, “description”]
+         }
+       }
+     },
+     {
+       "$addFields": {
+         "score": { "$meta": "searchScore" }
+       }
+     },
+     {
+       "$sort": { "score": -1 }
+     }
+   ]
+   results = collection.aggregate(aggregation_pipeline)
 
-  field :name, type: String
-  field :description, type: String
-  field :picture, type: String
-
-  index({ name: 'text', description: 'text' }, { name: 'name_description_text_index' })
-
-  def self.search(query)
-    where({ "$text": { "$search": query } })
-      .project(score: { "$meta": "textScore" })
-      .order_by(score: :desc)
-  end
+   search_results = results.to_a
+   search_results.map do |result|
+     Idea.new(
+       id: result["_id"],
+       name: result["name"],
+       description: result["description"],
+       picture: result["picture"]
+     )
+   end
+ end
 end
