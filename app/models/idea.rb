@@ -6,25 +6,21 @@ class Idea
  field :picture, type: String
  
 def self.search(query)
-   aggregation_pipeline = [
-     {
-       "$search": {
-         "index": "inspiration",
-         "text": {
-           "query": query,
-           "path": [“name”, “description”]
-         }
-       }
-     },
-     {
-       "$addFields": {
-         "score": { "$meta": "searchScore" }
-       }
-     },
-     {
-       "$sort": { "score": -1 }
-     }
-   ]
+    aggregation_pipeline = [
+      {
+        "$search": {
+          "index": "inspiration",
+          "text": {
+            "query": query,
+            "path": ['name', 'description']
+          },
+          sort: {score: {"$meta": "searchScore"}}
+        }
+      },
+      {
+        "$limit": 20
+      }
+    ]
    results = collection.aggregate(aggregation_pipeline)
 
    search_results = results.to_a
